@@ -13,8 +13,12 @@ function TodoList() {
       </h2>
       <ul className="w-full flex-center flex gap-2 flex-col text-eee">
         {(todos.length &&
-          todos.map((todo: TodoType) => <Todo todo={todo} />)) || (
-          <li className={listStyle + " justify-center"}> Mevcut Görev Yok!</li>
+          todos.map((todo: TodoType) => (
+            <Todo todo={todo} key={todo.id} />
+          ))) || (
+          <li className={listStyle + " justify-center bg-todo-bg"}>
+            Mevcut Görev Yok!
+          </li>
         )}
       </ul>
     </div>

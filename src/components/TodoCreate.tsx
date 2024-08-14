@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { TodoType } from "../types/todo";
-import { createTodo } from "../redux/todoSlice";
+import { addTodo } from "../redux/todoSlice";
 
 function TodoCreate() {
   const dispatch = useDispatch();
@@ -11,15 +11,14 @@ function TodoCreate() {
     if (!newTodo.trim().length) return alert("Todo Giriniz!");
 
     const payload: TodoType = {
-      id: Math.floor(Math.random() * 999999999999).toString(),
+      id: Math.floor(Math.random() * 999999999).toString(),
       content: newTodo,
       create: Date.now().toString(),
       done: false,
     };
 
-    dispatch(createTodo(payload));
+    dispatch(addTodo(payload));
     setNewTodo("");
-    console.log("Create Todo: ", payload);
   };
 
   return (

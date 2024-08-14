@@ -1,10 +1,10 @@
 export interface TodoInitialState {
-    todos: TodoType[]
+  todos: TodoType[];
 }
 
 export interface TodoType {
-    id: string,
-    content: string,
-    create: string,
-    done: boolean
+  id: string;
+  content: string;
+  create: string;
+  done: boolean;
 }
