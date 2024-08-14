@@ -43,6 +43,16 @@ export const todoSlice = createSlice({
 
       if (targetTodo) targetTodo.done = false;
     },
+    updateTodoById: (
+      state: TodoInitialState,
+      action: PayloadAction<Omit<TodoType, "done">>
+    ) => {
+      const targetTodo = state.todos.find(
+        (todo: TodoType) => todo.id === action.payload.id
+      );
+
+      if (targetTodo) targetTodo.content = action.payload.content;
+    },
   },
 });
 
@@ -51,6 +61,7 @@ export const {
   deleteTodoById,
   markTodoAsCompleted,
   markTodoAsIncomplete,
+  updateTodoById,
 } = todoSlice.actions;
 
 export default todoSlice.reducer;

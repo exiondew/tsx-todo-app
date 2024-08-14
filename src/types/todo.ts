@@ -5,6 +5,5 @@ export interface TodoInitialState {
 export interface TodoType {
   id: string;
   content: string;
-  create: string;
   done: boolean;
 }

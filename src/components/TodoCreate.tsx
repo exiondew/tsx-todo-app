@@ -13,7 +13,6 @@ function TodoCreate() {
     const payload: TodoType = {
       id: Math.floor(Math.random() * 999999999).toString(),
       content: newTodo,
-      create: Date.now().toString(),
       done: false,
     };
 
